@@ -4,15 +4,15 @@
     <link rel="stylesheet" href="{% static 'header.css' %}">
            
     <nav>
-        
-        <ul>
-            
-                <li> LOGO</li>
-                    
+            <ul class="left-aligned">
+             <li> LOGO</li>
+            </ul>
+             <ul class="center-aligned">                   
              <li ><a href="#Home">Home</a></li>
              <li ><a href="#About">About</a></li>
              <li ><a href="#Contact">Contact</a></li>
-            
+             </ul>
+             <ul>
             {% if user.is_authenticated %}
                  Hi {{ user.username }}!
                  <li ><a href="{% url 'logout' %}">Log Out</a></li>
@@ -20,8 +20,8 @@
                  <li><a href="accounts/login">Login</a></li>
                  <li ><a href="accounts/register">Register</a></li>
             {% endif %}
-
         </ul>
+        
     </nav>
 </header>
 

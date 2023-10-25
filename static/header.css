@@ -17,9 +17,13 @@ header {
   left: 0;
   z-index: 999;
 }
-.logo{
-  text-transform: capitalize;
-  color: aqua;
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; /* Adjust the padding as needed */
+
 }
 nav ul {
   list-style: none;
