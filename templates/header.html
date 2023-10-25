@@ -12,8 +12,14 @@
             <li> LOGO</li>
             <li><a href="#Services">Services</a></li>
             <li><a href="#Contact">Contact</a></li>
-            <li><a href="accounts/login">Login</a></li>
-            <li><a href="#Register">Register</a></li>
+            {% if user.is_authenticated %}
+                 Hi {{ user.username }}!
+                 <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+                 <li><a href="accounts/login">Login</a></li>
+                 <li><a href="#Register">Register</a></li>
+            {% endif %}
+            
         </ul>
     </nav>
 </header>
