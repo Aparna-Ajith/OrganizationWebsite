@@ -10,11 +10,17 @@
         rel="stylesheet"
     >
 </head>
-{%include "header.html"%}
+<div>
+    {%include "header.html"%}
+</div>
 <body class="container">
+  
+        {% block page_content %}{% endblock page_content %}
     
-{% block page_content %}{% endblock page_content %}
-
 </body>
-{%include "footer.html"%}
+<footer>
+
+    {%include "footer.html"%}
+
+</footer>
 </html>

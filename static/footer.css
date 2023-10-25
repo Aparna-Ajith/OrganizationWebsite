@@ -7,10 +7,12 @@ body {
 }
 footer {
   margin-top: auto;
-  width: 100%;
+  min-width: 100%;
+  width: initial;
   height: 60px; /* Adjust as needed */
   background-color: #333; /* Adjust as needed */
   color: #fff;
-  padding: 10px 0px 20px;
+  padding: 10px 0px;
   text-align: center;
+  z-index: 999;
 }
