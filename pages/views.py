@@ -11,3 +11,7 @@ def home(request):
 
 def login(request):
     return render(request, "templates/registration/login.html", {})
+
+
+def contact(request):
+    return render(request, "pages/contact.html", {})

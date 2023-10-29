@@ -9,8 +9,8 @@
             </ul>
              <ul class="center-aligned">                   
              <li ><a href="/">Home</a></li>
-             <li ><a href="acts/">About</a></li>
-             <li ><a href="#Contact">Contact</a></li>
+             <li ><a href="{% url 'acts_index' %}">About</a></li>
+             <li ><a href="{% url 'contact' %}">Contact</a></li>
              </ul>
              <ul>
             {% if user.is_authenticated %}
