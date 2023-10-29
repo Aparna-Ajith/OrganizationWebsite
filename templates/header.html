@@ -17,8 +17,8 @@
                  Hi {{ user.username }}!
                  <li ><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
-                 <li><a href="accounts/login">Login</a></li>
-                 <li ><a href="accounts/signup">Register</a></li>
+                 <li><a href="{% url 'login' %}">Login</a></li>
+                 <li ><a href="{% url 'signup' %}">Register</a></li>
             {% endif %}
         </ul>
         

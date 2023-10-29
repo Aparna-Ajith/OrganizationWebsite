@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: zeroid3105@gmail.com
+Date: Sun, 29 Oct 2023 10:30:01 -0000
+Message-ID: <169857540111.4536.16687959871680712898@ACER>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/MQ/bwu9s0-e139546681b10c748498afa331b32d6b/
+
+Your username, in case you’ve forgotten: Zero
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

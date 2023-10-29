@@ -6,11 +6,13 @@
     <h1>Hello, World!</h1>
     {% if user.is_authenticated %}
   Hi {{ user.username }}!
-  <button type="submit"><a href="{% url 'logout' %}">Log Out</a></button>
+  <p><button type="submit"><a href="{% url 'logout' %}">Log Out</a></button></p>
+  <p><button><a href="{% url 'password_reset' %}">Reset Password</a></button></p>
 {% else %}
   <p>You are not logged in</p>
-  <button type="submit">
+  <p><button type="submit">
   <a href="{% url 'login' %}">Log In</a>
 </button>
+</p>
 {% endif %}
 {% endblock page_content %}
