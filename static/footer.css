@@ -6,6 +6,7 @@ body {
   padding: 0;
 }
 footer {
+  background-image: url"{% static 'UI/footer.png' %}";
   margin-top: auto;
   min-width: 100%;
   width: initial;
