@@ -3,16 +3,18 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-    <h1>Hello, World!</h1>
+    
     {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><button type="submit"><a href="{% url 'logout' %}">Log Out</a></button></p>
-  <p><button><a href="{% url 'password_reset' %}">Reset Password</a></button></p>
-{% else %}
-  <p>You are not logged in</p>
-  <p><button type="submit">
-  <a href="{% url 'login' %}">Log In</a>
-</button>
-</p>
-{% endif %}
+      <h1>Hi {{ user.username }} !</h1>
+      <p><button type="submit"><a href="{% url 'logout' %}">Log Out</a></button></p>
+      <p><button><a href="{% url 'password_reset' %}">Reset Password</a></button></p>
+    {% else %}
+      <p><h1>You are not logged in!</h1></p>
+      <p><button type="submit">
+      <a href="{% url 'login' %}">Log In</a>
+      </button>
+      </p>
+    {% endif %}
+
+    
 {% endblock page_content %}
