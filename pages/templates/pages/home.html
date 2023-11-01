@@ -1,20 +1,23 @@
 <!-- pages/templates/pages/home.html -->
 
 {% extends "base.html" %}
-
+{% load static %}
 {% block page_content %}
     
     {% if user.is_authenticated %}
-      <h1>Hi {{ user.username }} !</h1>
-      <p><button type="submit"><a href="{% url 'logout' %}">Log Out</a></button></p>
-      <p><button><a href="{% url 'password_reset' %}">Reset Password</a></button></p>
+        <h1>Hi {{ user.username }}!</h1>
+        <p>
+            <button type="submit"><a href="{% url 'logout' %}">Log Out</a></button>
+        </p>
+        <p>
+            <button><a href="{% url 'password_reset' %}">Reset Password</a></button>
+        </p>
     {% else %}
-      <p><h1>You are not logged in!</h1></p>
-      <p><button type="submit">
-      <a href="{% url 'login' %}">Log In</a>
-      </button>
-      </p>
+        <h1>You are not logged in!</h1>
+        <p>
+            <button type="submit">
+                <a href="{% url 'login' %}">Log In</a>
+            </button>
+        </p>
     {% endif %}
-
-    
 {% endblock page_content %}

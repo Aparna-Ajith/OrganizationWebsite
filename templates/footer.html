@@ -3,26 +3,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'UI/footer.css' %}">
            
-    <nav>
-            <ul class="left-aligned">
-             <li> LOGO</li>
-            </ul>
-             <ul class="center-aligned">                   
-             <li ><a href="/">Home</a></li>
-             <li ><a href="{% url 'about' %}">About</a></li>
-             <li ><a href="{% url 'acts_index' %}">Activities</a></li>
-             <li ><a href="{% url 'contact' %}">Contact</a></li>
-             </ul>
-             <ul>
-            {% if user.is_authenticated %}
-                 Hi {{ user.username }}!
-                 <li ><a href="{% url 'logout' %}">Log Out</a></li>
-            {% else %}
-                 <li><a href="{% url 'login' %}">Login</a></li>
-                 <li ><a href="{% url 'signup' %}">Register</a></li>
-            {% endif %}
-        </ul>
+    <nav><ul>
+            &copy; My Organisation 2023
+          
         
+        </ul>
     </nav>
 </footer>
 
