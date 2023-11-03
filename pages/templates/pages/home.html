@@ -3,6 +3,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
     
     {% if user.is_authenticated %}
         <h1>Hi {{ user.username }}!</h1>
@@ -20,4 +22,37 @@
             </button>
         </p>
     {% endif %}
+
+    <div class="carousel">
+      <img src="{% static 'assets/image1.png' %}"  alt="Image 1">
+      <img src="{% static 'assets/image2.png' %}"  alt="Image 2">
+      <img src="{% static 'assets/image3.png' %}"  alt="Image 3">
+      <img src="{% static 'assets/image4.png' %}"  alt="Image 4">
+      <img src="{% static 'assets/image5.png' %}"  alt="Image 5">
+
+  </div>
+
+  <script>
+      let currentImage = 0;
+      const images = document.querySelectorAll('.carousel img');
+      
+      function nextImage() {
+          images[currentImage].style.display = 'none';
+          currentImage = (currentImage + 1) % images.length;
+          images[currentImage].style.display = 'block';
+      }
+      
+      function prevImage() {
+          images[currentImage].style.display = 'none';
+          currentImage = (currentImage - 1 + images.length) % images.length;
+          images[currentImage].style.display = 'block';
+      }
+      
+      // Initially, show the first image
+      images[currentImage].style.display = 'block';
+      
+      // Set up interval to auto-advance the carousel (optional)
+      setInterval(nextImage, 3000); // Change image every 3 seconds
+  </script>
+      
 {% endblock page_content %}
