@@ -1,58 +1,114 @@
 <!-- pages/templates/pages/home.html -->
-
 {% extends "base.html" %}
 {% load static %}
+
 {% block page_content %}
+<!-- Add CSS styles here -->
+<style>
+  
+  .carousel {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .carousel img {
+    max-width: 450px; /* Set your desired constant size here */
+    height: 400px;
+    display: none; /* Initially hide all images */
+  }
+
+  .links{
+    justify-content: space-around;
+
+  }
+  .logtitle{
+    padding: 20px;
+  }
+  .rightside{
+    align-items:right;
+  }
+  article {
+    float: right;
+    padding: 20px;
+    width: auto;
+    height:auto;
+    /*background-color: #ffffff;*/
+    height: 300px; 
+  }
+  .rightheader {
+    float: left;
+    width: auto;
+    height: auto;
+    /*background: #ffffff;*/
+    padding: 20px;
+    color: antiquewhite;
+  }
+
+</style>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
-    
-    {% if user.is_authenticated %}
-        <h1>Hi {{ user.username }}!</h1>
-        <p>
-            <button type="submit"><a href="{% url 'logout' %}">Log Out</a></button>
-        </p>
-        <p>
-            <button><a href="{% url 'password_reset' %}">Reset Password</a></button>
-        </p>
-    {% else %}
-        <h1>You are not logged in!</h1>
-        <p>
-            <button type="submit">
-                <a href="{% url 'login' %}">Log In</a>
-            </button>
-        </p>
-    {% endif %}
+<section class="logtitle">
+{% if user.is_authenticated %}
+    <h1>Hi {{ user.username }}!</h1>
+    <p class="links">
+        <a href="{% url 'logout' %}">Log Out</a>
+        
+        <a href="{% url 'password_reset' %}">Reset Password</a>
+    </p>
+{% else %}
+    <h1>You are not logged in!</h1>
+    <p>
+        <button type="submit">
+            <a href="{% url 'login' %}">Log In</a>
+        </button>
+    </p>
 
-    <div class="carousel">
-      <img src="{% static 'assets/image1.png' %}"  alt="Image 1">
-      <img src="{% static 'assets/image2.png' %}"  alt="Image 2">
-      <img src="{% static 'assets/image3.png' %}"  alt="Image 3">
-      <img src="{% static 'assets/image4.png' %}"  alt="Image 4">
-      <img src="{% static 'assets/image5.png' %}"  alt="Image 5">
+{% endif %}
+  </section>
 
-  </div>
 
-  <script>
-      let currentImage = 0;
-      const images = document.querySelectorAll('.carousel img');
-      
-      function nextImage() {
-          images[currentImage].style.display = 'none';
-          currentImage = (currentImage + 1) % images.length;
+<section>
+  <nav class="rightheader"> <h1>We are going to add content here !</h1> </nav>
+    <article class="carousel">
+        <img src="{% static 'assets/image1.png' %}" alt="Image 1">
+        <img src="{% static 'assets/image2.png' %}" alt="Image 2">
+        <img src="{% static 'assets/image3.png' %}" alt="Image 3">
+        <img src="{% static 'assets/image4.png' %}" alt="Image 4">
+        <img src="{% static 'assets/image5.png' %}" alt="Image 5">
+        <script>
+          let currentImage = 0;
+          const images = document.querySelectorAll('.carousel img');
+  
+          function nextImage() {
+              images[currentImage].style.display = 'none';
+              currentImage = (currentImage + 1) % images.length;
+              images[currentImage].style.display = 'block';
+          }
+  
+          function prevImage() {
+              images[currentImage].style.display = 'none';
+              currentImage = (currentImage - 1 + images.length) % images.length;
+              images[currentImage].style.display = 'block';
+          }
+  
+          // Initially, show the first image
           images[currentImage].style.display = 'block';
-      }
-      
-      function prevImage() {
-          images[currentImage].style.display = 'none';
-          currentImage = (currentImage - 1 + images.length) % images.length;
-          images[currentImage].style.display = 'block';
-      }
-      
-      // Initially, show the first image
-      images[currentImage].style.display = 'block';
-      
-      // Set up interval to auto-advance the carousel (optional)
-      setInterval(nextImage, 3000); // Change image every 3 seconds
-  </script>
-      
+  
+          // Set up interval to auto-advance the carousel (optional)
+          setInterval(nextImage, 3000); // Change image every 3 seconds
+      </script>
+    </article>
+
+ 
+  
+
+
+  </section>
+
+
+
+
 {% endblock page_content %}

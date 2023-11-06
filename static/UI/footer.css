@@ -10,9 +10,9 @@ footer {
   min-width: 100%;
   width: initial;
   height: 60px; /* Adjust as needed */
-  background-color: #333; /* Adjust as needed */
-  color: #fff;
-  padding: 10px 0px;
+  background-color: #350b33; /* Adjust as needed */
+  color: #350b33;
+  padding: 0px 0px;
   text-align: center;
   z-index: 999;
 }
