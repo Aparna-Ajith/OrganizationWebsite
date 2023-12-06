@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'chatbot',
+    'core',
+    'ckeditor',
+    'payments.apps.PaymentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -139,5 +142,13 @@ MEDIA_URL = "media/"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+STRIPE_PUBLIC_KEY = "pk_test_51MP8yISA1BfTl4jtuPSQlo4UoDi4DqhceEaaVWP7tC6URKlLnDIbRLRjdBxOjUPWsSsmEY4joJvLdG0xhMay6vVl00ZIl5m067"
+STRIPE_SECRET_KEY = "sk_test_51MP8yISA1BfTl4jts4ooIOa2SBNTBZaLUwqY7fEn3a8awFaIPKIle4dxczcdSCh3eJJWtaTpu2rYSfgZIb36J4vh00RAjmQZDp"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'cfb5fc42a0b63f'
+EMAIL_HOST_PASSWORD = 'cef2debed4df52'
+EMAIL_PORT = '2525'
